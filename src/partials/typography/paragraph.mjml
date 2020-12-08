@@ -1,0 +1,5 @@
+{% macro paragraph(paddingBottom="text", text="") %}
+<mj-text padding="0 0 {{paddingBottom}}" font-size="36px" line-height="40px">
+  <p class="lcc-body">{{text}}</p>
+</mj-text>
+{% endmacro %}

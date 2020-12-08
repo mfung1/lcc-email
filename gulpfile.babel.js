@@ -20,7 +20,7 @@ const PATHS = {
     src: './dist/mjml/**/*.mjml',
     dist: './dist/mjml/',
   },
-  dist: './dist/html/'
+  dist: './dist'
 }
 
 function load_data() {
