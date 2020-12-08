@@ -2,6 +2,8 @@
 {% from "typography/heading.mjml" import heading %}
 {% from "typography/paragraph.mjml" import paragraph %}
 {% from "typography/line-break.mjml" import linebreak %}
+{% from "inset-paragraph.mjml" import insetParagraph %}
+
 
 {% block title %}Basic template - MJML Starter Base{% endblock %}
 {% block preheader %}Starter base for Email templating with Gulp, MJML and Nunjucks{% endblock %}
@@ -14,12 +16,19 @@
 	{% include "basic-header.mjml" %}
 
 	<!-- Intro text -->
-	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 30px">
-		{{ heading("h1", "Main heading")}}
-		{{ paragraph("30", "Dear J bloggs,")}}
-		{{ paragraph("20", example.firstParagraph)}}
-		{{ paragraph("20", example.secondParagraph)}}
-		{{ linebreak("20", "This paragraph includes a line break:", "This is the text after the line break.")}}		
-
+	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("30px", "h1", "Main heading")}}
+			{{ paragraph("20px", "Dear J bloggs,")}}
+			{{ paragraph("20px", example.firstParagraph)}}
+			{{ paragraph("20px", example.secondParagraph)}}
+			{{ linebreak("20px", "This paragraph includes a line break:", "This is the text after the line break.")}}
+		</mj-column>
+	</mj-section>
+	{{insetParagraph(true, "This is some introductory text before the data.", example.details)}}
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("30px", "h2", "Main heading")}}
+		</mj-column>
 	</mj-section>
 {% endblock %}

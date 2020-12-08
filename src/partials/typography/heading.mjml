@@ -1,5 +1,5 @@
-{% macro heading(level="", text="") %}
-<mj-text padding="0" font-size="36px" line-height="40px">
+{% macro heading(paddingBottom="", level="", text="") %}
+<mj-text padding="0 0 {{paddingBottom}}" font-size="36px" line-height="40px">
   <{{level}} class="lcc-heading-{{level}}">{{text}}</{{level}}>
 </mj-text>
 {% endmacro %}
