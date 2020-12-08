@@ -22,16 +22,24 @@
 				color: inherit;
 				text-decoration: none;
 			}
+			.pd-20-dt table > tr > td {
+				padding-left: 20px!important;
+				padding-right: 20px!important;
+			}
 
 			@media (max-width: 756px) {
 				p, a, li {
 					font-size: 16px;
 					line-height: 25px;
 				}
+				.pd-20-dt table > tr > td {
+					padding-left: 10px!important;
+					padding-right: 10px!important;
+				}
 			}
 		</mj-style>
 	</mj-head>
-	<mj-body {% block containerbackground %}{% endblock %}>
+	<mj-body full-width="full-width" {% block containerbackground %}{% endblock %}>
 		{% block content %}{% endblock %}
 	</mj-body>
 </mjml>

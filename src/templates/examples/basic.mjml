@@ -14,7 +14,7 @@
 	{% include "basic-header.mjml" %}
 
 	<!-- Intro text -->
-	<mj-section padding="40px 10px 30px">
+	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 30px">
 		{{ heading("h1", "Main heading")}}
 		{{ paragraph("30", "Dear J bloggs,")}}
 		{{ paragraph("20", example.firstParagraph)}}
