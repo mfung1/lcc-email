@@ -5,8 +5,8 @@
 {% from "inset-paragraph.mjml" import insetParagraph %}
 {% from "typography/captioned-link.mjml" import captionedLink %}
 
-{% block title %}Basic template - MJML Starter Base{% endblock %}
-{% block preheader %}Starter base for Email templating with Gulp, MJML and Nunjucks{% endblock %}
+{% block title %}{{example.subject}}{% endblock %}
+{% block preheader %}{{example.preheader}}{% endblock %}
 
 {% block containerbackground %}background-color="#ffffff"{% endblock %}
 
@@ -19,18 +19,20 @@
 	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
 		<mj-column padding="0">
 			{{ heading("30px", "h1", "Main heading")}}
-			{{ paragraph("20px", "Dear J Bloggs,")}}
-			{{ paragraph("20px", example.firstParagraph)}}
-			{{ paragraph("20px", example.secondParagraph)}}
+			{{ paragraph("20px", false,"Dear J Bloggs,")}}
+			{{ paragraph("20px", false, example.firstParagraph)}}
+			{{ paragraph("20px", false, example.secondParagraph)}}
 			{{ linebreak("20px", "This paragraph includes a line break:", "This is the text after the line break.")}}
 		</mj-column>
 	</mj-section>
-	{{insetParagraph(true, "This is some introductory text before the data.", example.details)}}
+	{{insetParagraph(true, "This is an inset paragraph used for data or callouts", example.details)}}
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
 			{{ heading("30px", "h2", "Secondary Heading that can run over multiple lines")}}
 			{{ captionedLink("Intro text before a link:", false, "https://www.lincolnshire.gov.uk", "https://www.lincolnshire.gov.uk")}}
 			{{ captionedLink("Intro text before a telphone number:", true, "01234 567 890", "01234 567 890")}}
+			{{ paragraph("10px", false, "Kind regards,")}}
+			{{ paragraph("0px", true, "Department or Team Name")}}
 		</mj-column>
 	</mj-section>
 {% endblock %}

@@ -2,6 +2,9 @@
 	<mj-head>
 		<mj-title>{% block title %}{% endblock %}</mj-title>
 		<mj-preview>{% block preheader %}{% endblock %}</mj-preview>
+		<mj-raw>
+			<meta name="color-scheme" content="light only"/>
+		</mj-raw>
 
 		<mj-attributes>
 			<mj-text padding="0"/>
@@ -9,6 +12,34 @@
 		</mj-attributes>
 		<mj-font name="Roboto" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
 		<mj-style>
+			@font-face {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 400;
+				mso-font-alt: Arial;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+			}
+			@font-face {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 500;
+				mso-font-alt: Arial;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+			}
+			@font-face {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 700;
+				mso-font-alt: Arial;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+			}
+			* {
+				font-family: Roboto, Helvetica, Arial, sans-serif;
+				color: #424141;
+			}
 			h1,h2,h3,h4 {margin: 0; padding:0;font-weight: 700;}
 			h1 {
 				font-size: 36px;
@@ -36,7 +67,7 @@
 				padding-right: 20px!important;
 			}
 			.lcc-bold {
-				font-weight: 500;
+				font-weight: bolder;
 			}
 			.lcc-link {
 				color: #A9B62C;
