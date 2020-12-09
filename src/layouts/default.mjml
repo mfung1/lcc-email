@@ -38,6 +38,23 @@
 			.lcc-bold {
 				font-weight: 500;
 			}
+			.lcc-link {
+				color: #A9B62C;
+				text-decoration: underline;
+				text-decoration-skip-ink: all;
+				font-weight: 500;
+			}
+			.lcc-link:hover {
+				color: #99A428;
+				transition: color .3s ease;
+			}
+			.lcc-link:focus {
+				background-color: #FBBA08;
+				color: #424141;
+				outline: none;
+				box-shadow: 0 -2px #FBBA08,0 4px #424141;
+				text-decoration: none;
+			}
 
 			@media (max-width: 756px) {
 				p, a, li {

@@ -3,7 +3,7 @@
 {% from "typography/paragraph.mjml" import paragraph %}
 {% from "typography/line-break.mjml" import linebreak %}
 {% from "inset-paragraph.mjml" import insetParagraph %}
-
+{% from "typography/captioned-link.mjml" import captionedLink %}
 
 {% block title %}Basic template - MJML Starter Base{% endblock %}
 {% block preheader %}Starter base for Email templating with Gulp, MJML and Nunjucks{% endblock %}
@@ -19,7 +19,7 @@
 	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
 		<mj-column padding="0">
 			{{ heading("30px", "h1", "Main heading")}}
-			{{ paragraph("20px", "Dear J bloggs,")}}
+			{{ paragraph("20px", "Dear J Bloggs,")}}
 			{{ paragraph("20px", example.firstParagraph)}}
 			{{ paragraph("20px", example.secondParagraph)}}
 			{{ linebreak("20px", "This paragraph includes a line break:", "This is the text after the line break.")}}
@@ -29,6 +29,8 @@
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
 			{{ heading("30px", "h2", "Secondary Heading that can run over multiple lines")}}
+			{{ captionedLink("Intro text before a link:", false, "https://www.lincolnshire.gov.uk", "https://www.lincolnshire.gov.uk")}}
+			{{ captionedLink("Intro text before a telphone number:", true, "01234 567 890", "01234 567 890")}}
 		</mj-column>
 	</mj-section>
 {% endblock %}
