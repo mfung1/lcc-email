@@ -28,7 +28,7 @@
 	{{insetParagraph(true, "This is some introductory text before the data.", example.details)}}
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
-			{{ heading("30px", "h2", "Main heading")}}
+			{{ heading("30px", "h2", "Secondary Heading that can run over multiple lines")}}
 		</mj-column>
 	</mj-section>
 {% endblock %}

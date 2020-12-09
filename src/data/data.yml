@@ -8,7 +8,7 @@ example:
   details:
     item1:
       name: "Application Reference"
-      data: "123456789"
+      value: "123456789"
     item2:
       name: "Date received"
-      data: "15 March 2015"
+      value: "15 March 2015"
