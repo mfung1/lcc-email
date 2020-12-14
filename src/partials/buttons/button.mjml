@@ -1,0 +1,30 @@
+{% macro button(theme="", text="", link="", padding="false") %}
+  {% if theme=="primary" %}
+    {% set bgColor = "#A9B62C" %}
+    {% set color = "#424141" %}
+  {% elseif theme=="secondary" %}
+    {% set bgColor = "#D3D3D3" %}
+    {% set color = "#424141" %}
+  {% endif %}
+  <mj-button 
+    border-radius="0"
+    border-bottom="4px solid #000000"
+    css-class="lcc-button lcc-button--{{theme}} lcc-bold"
+    href="{{link}}"
+    text-align="left"
+    font-size="16px"
+    line-height="25px"
+    font-weight="700"
+    {% if padding == true %}
+    padding="0 0 30px"
+    {% else %}
+    padding="0"
+    {% endif %}
+    inner-padding="10px 15px"
+    align="left"
+    font-family="Roboto Condensed"
+    background-color="{{bgColor}}"
+    color="{{color}}"
+    vertical-align"middle"><span style="display:inline-block;vertical-align:middle;padding-right: 15px;">{{text}}</span><img src="{{example.buttonChevron}}" style="display: inline-block;height:23px;width:13px;vertical-align:middle;" height="23" width="18" alt=""/>
+  </mj-button>
+{% endmacro %}

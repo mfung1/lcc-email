@@ -1,9 +1,11 @@
 {% extends "default.mjml" %}
+
 {% from "typography/heading.mjml" import heading %}
 {% from "typography/paragraph.mjml" import paragraph %}
 {% from "typography/line-break.mjml" import linebreak %}
 {% from "inset-paragraph.mjml" import insetParagraph %}
 {% from "typography/captioned-link.mjml" import captionedLink %}
+{% from "buttons/button.mjml" import button with context %}
 
 {% block title %}{{example.subject}}{% endblock %}
 {% block preheader %}{{example.preheader}}{% endblock %}
@@ -26,6 +28,24 @@
 		</mj-column>
 	</mj-section>
 	{{insetParagraph(true, "This is an inset paragraph used for data or callouts", example.details)}}
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("30px", "h2", "Call to actions")}}
+			{{ paragraph("0px", false, "You should only use one CTA per email to avoid confusing the user.")}}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("20px", "h3", "Primary")}}
+			{{ button("primary", "Call to action", "https://www.lincolnshire.gov.uk") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("20px", "h3", "Secondary")}}
+			{{ button("secondary", "Call to action", "https://www.lincolnshire.gov.uk") }}
+		</mj-column>
+	</mj-section>
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
 			{{ heading("30px", "h2", "Secondary Heading that can run over multiple lines")}}

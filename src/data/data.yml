@@ -7,6 +7,7 @@ example:
   mainHeading: "Dear J. Bloggs,"
   firstParagraph: "This is the first paragraph on one line."
   secondParagraph: "This is the second paragraph, it is longer than the first and can run on multiple lines."
+  buttonChevron: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXCAYAAADQpsWBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEqSURBVHgBldQxTsMwFADQ/524HQCJI2RkAGSkIjEmC2SEG7Q34AacoSconICVTsmexVI5AEdgTUtqvl0lbd3Eif9gfSd+8rfjGG8nj28K4BUY5sG6nEmZ/0JP4M39k2o6AJJtyqQPMlCQ1x3SYsvHmRDxpRMFf+ULgpI+EHWjB2z5KFOAYkipTDf6BdusE3vGajRetJZXJzWk9Af28pk2atGJahgEeAwBpjZEaAnxkEZVpTJKo4PH76tiOetEfbATuaAT6biepDGigU0wF7gSaUTgaBPoU8zRBTi3S8OPVfE1RV9gMl9wgtoArUF+F8u7w3HNRkR0aEOuPm0QnpWJVcxuJg3O6XegjrCBzE9POfoCHeFFaI7/YLBbE6rYBxikFJsbQHfFEKDjHxdspLlXba8ZAAAAAElFTkSuQmCC"
   details:
     item1:
       name: "Application Reference"

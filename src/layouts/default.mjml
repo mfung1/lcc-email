@@ -38,7 +38,7 @@
 			}
 			* {
 				font-family: Roboto, Helvetica, Arial, sans-serif;
-				color: #424141;
+				box-sizing: border-box;
 			}
 			h1,h2,h3,h4 {margin: 0; padding:0;font-weight: 700;}
 			h1 {
@@ -84,6 +84,34 @@
 				color: #424141;
 				outline: none;
 				box-shadow: 0 -2px #FBBA08,0 4px #424141;
+				text-decoration: none;
+			}
+			.lcc-button > table > tbody > tr > td,
+			.lcc-button > table > tbody > tr > td > a {
+				transition: background-color .3s ease;
+			}
+			.lcc-button--primary > table > tbody > tr > td:hover,
+			.lcc-button--primary > table > tbody > tr > td:hover > a {
+				background: #99A428!important;
+				transition: background-color .3s ease;
+			}
+			.lcc-button--secondary > table > tbody > tr > td:hover,
+			.lcc-button--secondary > table > tbody > tr > td:hover > a {
+				background: #C9C9C9!important;
+				transition: background-color .3s ease;
+			}
+			.lcc-button--primary a:focus {
+				background-color: #FBBA08!important;
+				color: #424141;
+				outline: none;
+				box-shadow: 0 4px #424141;
+				text-decoration: none;
+			}
+			.lcc-button--secondary a:focus {
+				background-color: #FBBA08!important;
+				color: #424141;
+				outline: none;
+				box-shadow: 0 4px #424141;
 				text-decoration: none;
 			}
 
