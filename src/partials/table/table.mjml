@@ -1,5 +1,5 @@
 {% macro lccTable(params) %}
-<mj-table color="#424141" font-family="Roboto">
+<mj-table css-class="lcc-table" font-size="19px" line-height="25px" padding="0 0 30px" color="#424141" font-family="Roboto">
   {% if params.caption %}
   <caption class="lcc-table__caption{% if params.captionClasses%}{{params.captionClasses}}{% endif %}">{{params.caption}}</caption>
   {% endif %}

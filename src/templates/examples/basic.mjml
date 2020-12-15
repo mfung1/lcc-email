@@ -1,6 +1,5 @@
 {% extends "default.mjml" %}
 
-
 {% block title %}{{example.subject}}{% endblock %}
 {% block preheader %}{{example.preheader}}{% endblock %}
 
@@ -47,6 +46,111 @@
 			{{ captionedLink("Intro text before a telphone number:", true, "01234 567 890", "01234 567 890")}}
 			{{ paragraph("10px", false, "Kind regards,")}}
 			{{ paragraph("0px", true, "Department or Team Name")}}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("30px", "h2", "Tables")}}
+			{{ heading("20px", "h3", "Text-based table")}}
+			{{ paragraph("10px", false, "If the table has textual content the data is left aligned.")}}
+			{{ lccTable({
+					caption: "Dates and amounts",
+					firstCellIsHeader: true,
+					head: [
+						{
+							text: "Date"
+						},
+						{
+							text: "Amount"
+						}
+					],
+					rows: [
+						[
+							{
+								text: "First 6 weeks"
+							},
+							{
+								text: "£109.80 per week"
+							}
+						],
+						[
+							{
+								text: "Next 33 weeks"
+							},
+							{
+								text: "£109.80 per week"
+							}
+						],
+						[
+							{
+								text: "Total estimated pay"
+							},
+							{
+								text: "£4,282.20"
+							}
+						]
+					]
+				}) }}
+			{{ heading("20px", "h3", "Number-based table")}}
+			{{ paragraph("10px", false, "If the table has numeric content the data is right aligned.")}}
+			{{ lccTable({
+					caption: "Dates and amounts",
+					firstCellIsHeader: true,
+					head: [
+							{
+								text: "Month you apply"
+							},
+							{
+								text: "Rate for bicycles",
+								format: "numeric"
+							},
+							{
+								text: "Rate for vehicles",
+								format: "numeric"
+							}
+						],
+					rows: [
+						[
+							{
+								text: "January"
+							},
+							{
+								text: "£85",
+								format: "numeric"
+							},
+							{
+								text: "£95",
+								format: "numeric"
+							}
+						],
+						[
+							{
+								text: "February"
+							},
+							{
+								text: "£75",
+								format: "numeric"
+							},
+							{
+								text: "£55",
+								format: "numeric"
+							}
+						],
+						[
+							{
+								text: "March"
+							},
+							{
+								text: "£165",
+								format: "numeric"
+							},
+							{
+								text: "£125",
+								format: "numeric"
+							}
+						]
+					]
+				}) }}
 		</mj-column>
 	</mj-section>
 

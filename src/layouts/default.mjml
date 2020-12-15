@@ -4,6 +4,7 @@
 {% from "inset-paragraph.mjml" import insetParagraph %}
 {% from "typography/captioned-link.mjml" import captionedLink %}
 {% from "buttons/button.mjml" import button with context %}
+{% from "table/table.mjml" import lccTable %}
 <mjml>
 	<mj-head>
 		<mj-title>{% block title %}{% endblock %}</mj-title>
@@ -124,6 +125,38 @@
 				box-shadow: 0 4px #424141;
 				text-decoration: none;
 			}
+			.lcc-table {
+				font-size: 19px;
+				line-height: 25px;
+				font-color: #424141;
+				width: 100%;
+			}
+			.lcc-table__header {
+				font-family: Roboto, Helvetica, Arial, sans-serif;
+				font-weight: 700;
+			}
+			.lcc-table__row {
+				border-bottom: 1px solid #424141;
+			}
+			.lcc-table__header,
+			.lcc-table__cell {
+				padding: 18px 28px 18px 0;
+				text-align: left;
+				vertical-align: top;
+			}
+			.lcc-table__header--numeric,
+			.lcc-table__cell--numeric {
+				text-align: right;
+			}
+			.lcc-table__header:last-child,
+			.lcc-table__cell:last-child {
+				padding-right: 0;
+			}
+			.lcc-table__caption {
+				font-weight: 700;
+				display: table-caption;
+				text-align: left;
+			}
 
 			@media (max-width: 756px) {
 				p, a, li {
@@ -133,6 +166,12 @@
 				.pd-20-dt > table > tbody > tr > td {
 					padding-left: 10px!important;
 					padding-right: 10px!important;
+				}
+				.lcc-table__header,
+				.lcc-table__cell {
+					font-size: 16px;
+					line-height: 20px;
+					padding: 10px 20px 10px 0;
 				}
 			}
 		</mj-style>
