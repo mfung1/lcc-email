@@ -1,5 +1,5 @@
-{% macro paragraph(paddingBottom="text", bold=false, text="") %}
-<mj-text padding="0 0 {{paddingBottom}}" {% if bold %}font-weight="500"{% endif %} font-size="36px" line-height="40px">
-  <p class="lcc-body">{{text}}</p>
+{% macro paragraph(paddingBottom="text", bold=false, text="", small=false, textAlign="left") %}
+<mj-text padding="0 0 {{paddingBottom}}" {% if bold %}font-weight="500"{% endif %}{% if textAlign=="right"%}align="right"{% endif %} font-size="36px" line-height="40px">
+  <p class="lcc-body{% if small %} lcc-body--sm{%endif%}">{{text}}</p>
 </mj-text>
 {% endmacro %}

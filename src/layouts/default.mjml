@@ -1,3 +1,9 @@
+{% from "typography/heading.mjml" import heading %}
+{% from "typography/paragraph.mjml" import paragraph %}
+{% from "typography/line-break.mjml" import linebreak %}
+{% from "inset-paragraph.mjml" import insetParagraph %}
+{% from "typography/captioned-link.mjml" import captionedLink %}
+{% from "buttons/button.mjml" import button with context %}
 <mjml>
 	<mj-head>
 		<mj-title>{% block title %}{% endblock %}</mj-title>
@@ -65,6 +71,10 @@
 			.pd-20-dt > table > tbody > tr > td {
 				padding-left: 20px!important;
 				padding-right: 20px!important;
+			}
+			.lcc-body--sm {
+				font-size: 14px;
+				line-height: 25px;
 			}
 			.lcc-bold {
 				font-weight: bolder;

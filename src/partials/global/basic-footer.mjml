@@ -1,0 +1,16 @@
+{% from "typography/heading.mjml" import heading %}
+{% from "typography/paragraph.mjml" import paragraph %}
+
+<mj-section full-width="true" css-class="pd-20-dt" padding="20px 10px" border-top="4px solid #d3d3d3" background-color="#ffffff">
+	<mj-column align="left" padding="0">
+		<mj-image css-class="lcc-logo-light" padding="0" align="left" src="{{example.light_logo}}" height="44px" width="181px"/>
+	</mj-column>
+</mj-section>
+<mj-section full-width="true" css-class="pd-20-dt" padding="0px 10px" background-color="#ffffff">
+	<mj-column align="left" padding="0">
+    {{ paragraph("0px", false, "Lincolnshire County Council, County Offices,", true)}}
+    {{ paragraph("30px", false, "Newland, Lincoln, LN1 1YL", true)}}
+    {{ paragraph("0px", true, "Legal Stuff", true)}}
+    {{ paragraph("20px", false, "Legal gubbs", true)}}
+	</mj-column>
+</mj-section>
