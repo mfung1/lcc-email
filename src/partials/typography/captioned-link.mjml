@@ -1,0 +1,5 @@
+{% macro captionedLink(caption="text", telephone="false", linkURL="URL", linkText="URL") %}
+<mj-text padding="0 0 20px" font-size="36px" line-height="40px">
+  <p class="lcc-body">{{caption}}<br/><a href="{% if telephone %}tel:{% endif %}{{linkURL}}" class="lcc-link">{{linkText}}</a></p>
+</mj-text>
+{% endmacro %}

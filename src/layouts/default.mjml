@@ -1,7 +1,17 @@
+{% from "typography/heading.mjml" import heading %}
+{% from "typography/paragraph.mjml" import paragraph %}
+{% from "typography/line-break.mjml" import linebreak %}
+{% from "inset-paragraph.mjml" import insetParagraph %}
+{% from "typography/captioned-link.mjml" import captionedLink %}
+{% from "buttons/button.mjml" import button with context %}
+{% from "table/table.mjml" import lccTable %}
 <mjml>
 	<mj-head>
 		<mj-title>{% block title %}{% endblock %}</mj-title>
 		<mj-preview>{% block preheader %}{% endblock %}</mj-preview>
+		<mj-raw>
+			<meta name="color-scheme" content="light only"/>
+		</mj-raw>
 
 		<mj-attributes>
 			<mj-text padding="0"/>
@@ -9,11 +19,48 @@
 		</mj-attributes>
 		<mj-font name="Roboto" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
 		<mj-style>
+			@font-face {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 400;
+				mso-font-alt: Arial;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+			}
+			@font-face {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 500;
+				mso-font-alt: Arial;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+			}
+			@font-face {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 700;
+				mso-font-alt: Arial;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+			}
+			* {
+				font-family: Roboto, Helvetica, Arial, sans-serif;
+				box-sizing: border-box;
+			}
 			h1,h2,h3,h4 {margin: 0; padding:0;font-weight: 700;}
 			h1 {
-				font-size: 32px;
-				line-height: 36px;
+				font-size: 36px;
+				line-height: 40px;
 			}
+			h2 {
+				font-size: 24px;
+				line-height: 25px;
+			}
+			h3 {
+				font-size: 18px;
+				line-height: 20px;
+			}
+			p {margin: 0;}
 			p, a, li {
 				font-size: 19px;
 				line-height: 25px;
@@ -22,16 +69,114 @@
 				color: inherit;
 				text-decoration: none;
 			}
+			.pd-20-dt > table > tbody > tr > td {
+				padding-left: 20px!important;
+				padding-right: 20px!important;
+			}
+			.lcc-body--sm {
+				font-size: 14px;
+				line-height: 25px;
+			}
+			.lcc-bold {
+				font-weight: bolder;
+			}
+			.lcc-link {
+				color: #A9B62C;
+				text-decoration: underline;
+				text-decoration-skip-ink: all;
+				font-weight: 500;
+			}
+			.lcc-link:hover {
+				color: #99A428;
+				transition: color .3s ease;
+			}
+			.lcc-link:focus {
+				background-color: #FBBA08;
+				color: #424141;
+				outline: none;
+				box-shadow: 0 -2px #FBBA08,0 4px #424141;
+				text-decoration: none;
+			}
+			.lcc-button > table > tbody > tr > td,
+			.lcc-button > table > tbody > tr > td > a {
+				transition: background-color .3s ease;
+			}
+			.lcc-button--primary > table > tbody > tr > td:hover,
+			.lcc-button--primary > table > tbody > tr > td:hover > a {
+				background: #99A428!important;
+				transition: background-color .3s ease;
+			}
+			.lcc-button--secondary > table > tbody > tr > td:hover,
+			.lcc-button--secondary > table > tbody > tr > td:hover > a {
+				background: #C9C9C9!important;
+				transition: background-color .3s ease;
+			}
+			.lcc-button--primary a:focus {
+				background-color: #FBBA08!important;
+				color: #424141;
+				outline: none;
+				box-shadow: 0 4px #424141;
+				text-decoration: none;
+			}
+			.lcc-button--secondary a:focus {
+				background-color: #FBBA08!important;
+				color: #424141;
+				outline: none;
+				box-shadow: 0 4px #424141;
+				text-decoration: none;
+			}
+			.lcc-table {
+				font-size: 19px;
+				line-height: 25px;
+				font-color: #424141;
+				width: 100%;
+			}
+			.lcc-table__header {
+				font-family: Roboto, Helvetica, Arial, sans-serif;
+				font-weight: 700;
+			}
+			.lcc-table__row {
+				border-bottom: 1px solid #424141;
+			}
+			.lcc-table__header,
+			.lcc-table__cell {
+				padding: 18px 28px 18px 0;
+				text-align: left;
+				vertical-align: top;
+			}
+			.lcc-table__header--numeric,
+			.lcc-table__cell--numeric {
+				text-align: right;
+			}
+			.lcc-table__header:last-child,
+			.lcc-table__cell:last-child {
+				padding-right: 0;
+			}
+			.lcc-table__caption {
+				font-weight: 700;
+				display: table-caption;
+				text-align: left;
+			}
 
 			@media (max-width: 756px) {
 				p, a, li {
 					font-size: 16px;
 					line-height: 25px;
 				}
+				.pd-20-dt > table > tbody > tr > td {
+					padding-left: 10px!important;
+					padding-right: 10px!important;
+				}
+				.lcc-table__header,
+				.lcc-table__cell {
+					font-size: 16px;
+					line-height: 20px;
+					padding: 10px 20px 10px 0;
+				}
 			}
 		</mj-style>
 	</mj-head>
-	<mj-body {% block containerbackground %}{% endblock %}>
+	<mj-body full-width="full-width" {% block containerbackground %}{% endblock %}>
 		{% block content %}{% endblock %}
 	</mj-body>
 </mjml>

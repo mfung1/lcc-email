@@ -13,14 +13,17 @@ import data          from 'gulp-data';
 const PATHS = {
   src: './src/{layouts,partials,templates}/**/*.mjml',
   data: './src/data/data.yml',
+  assets: './src/assets/',
   layouts: './src/layouts/',
   partials: './src/partials/',
   templates: './src/templates/**/*.mjml',
   mjml: {
-    src: './dist/mjml/**/*.mjml',
-    dist: './dist/mjml/',
+    src: './dist/code/mjml/**/*.mjml',
+    dist: './dist/code/mjml/',
   },
-  dist: './dist'
+  htmlDist: './dist/code/html',
+  dist: './dist/',
+  startPath: './dist/code/html/index.html'
 }
 
 function load_data() {
@@ -29,7 +32,7 @@ function load_data() {
 }
 
 export function clean(done) {
-  rimraf('./dist/*', done);
+  rimraf('./dist/code/**/**', done);
 }
 
 export function buildTemplates() {
@@ -38,7 +41,8 @@ export function buildTemplates() {
     .pipe(nunjucks({
       path: [
         PATHS.layouts,
-        PATHS.partials
+        PATHS.partials,
+        PATHS.assets
       ],
       envOptions: {
         noCache: true
@@ -56,13 +60,14 @@ export function buildMjml() {
 
   return gulp.src(PATHS.mjml.src)
     .pipe(mjmlGulp(mjml, options))
-    .pipe(gulp.dest(PATHS.dist));
+    .pipe(gulp.dest(PATHS.htmlDist));
 }
 
 export function server(done) {
   const options = {
     server: {
       baseDir: PATHS.dist,
+      startPath: PATHS.startPath,
       directory: true
     },
     port: '8000',

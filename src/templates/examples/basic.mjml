@@ -1,25 +1,157 @@
 {% extends "default.mjml" %}
-{% from "typography/heading.mjml" import heading %}
-{% from "typography/paragraph.mjml" import paragraph %}
-{% from "typography/line-break.mjml" import linebreak %}
 
-{% block title %}Basic template - MJML Starter Base{% endblock %}
-{% block preheader %}Starter base for Email templating with Gulp, MJML and Nunjucks{% endblock %}
+{% block title %}{{example.subject}}{% endblock %}
+{% block preheader %}{{example.preheader}}{% endblock %}
 
 {% block containerbackground %}background-color="#ffffff"{% endblock %}
 
 {% block content %}
 
 	<!-- Header -->
-	{% include "basic-header.mjml" %}
+	{% include "global/basic-header.mjml" %}
 
 	<!-- Intro text -->
-	<mj-section padding="40px 10px 30px">
-		{{ heading("h1", "Main heading")}}
-		{{ paragraph("30", "Dear J bloggs,")}}
-		{{ paragraph("20", example.firstParagraph)}}
-		{{ paragraph("20", example.secondParagraph)}}
-		{{ linebreak("20", "This paragraph includes a line break:", "This is the text after the line break.")}}		
-
+	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("30px", "h1", "Main heading")}}
+			{{ paragraph("20px", true,"Dear Joe Bloggs,")}}
+			{{ paragraph("20px", false, example.firstParagraph)}}
+			{{ paragraph("20px", false, example.secondParagraph)}}
+			{{ linebreak("20px", "This paragraph includes a line break:", "This is the text after the line break.")}}
+		</mj-column>
 	</mj-section>
+	{{insetParagraph(true, "This is an inset paragraph used for data or callouts", example.details)}}
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("30px", "h2", "Call to actions")}}
+			{{ paragraph("0px", false, "You should only use one CTA per email to avoid confusing the user.")}}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("20px", "h3", "Primary")}}
+			{{ button("primary", "Call to action", "https://www.lincolnshire.gov.uk") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("20px", "h3", "Secondary")}}
+			{{ button("secondary", "Call to action", "https://www.lincolnshire.gov.uk") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("30px", "h2", "Secondary Heading that can run over multiple lines")}}
+			{{ captionedLink("Intro text before a link:", false, "https://www.lincolnshire.gov.uk", "https://www.lincolnshire.gov.uk")}}
+			{{ captionedLink("Intro text before a telphone number:", true, "01234 567 890", "01234 567 890")}}
+			{{ paragraph("10px", false, "Kind regards,")}}
+			{{ paragraph("0px", true, "Department or Team Name")}}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("30px", "h2", "Tables")}}
+			{{ heading("20px", "h3", "Text-based table")}}
+			{{ paragraph("10px", false, "If the table has textual content the data is left aligned.")}}
+			{{ lccTable({
+					caption: "Dates and amounts",
+					firstCellIsHeader: true,
+					head: [
+						{
+							text: "Date"
+						},
+						{
+							text: "Amount"
+						}
+					],
+					rows: [
+						[
+							{
+								text: "First 6 weeks"
+							},
+							{
+								text: "£109.80 per week"
+							}
+						],
+						[
+							{
+								text: "Next 33 weeks"
+							},
+							{
+								text: "£109.80 per week"
+							}
+						],
+						[
+							{
+								text: "Total estimated pay"
+							},
+							{
+								text: "£4,282.20"
+							}
+						]
+					]
+				}) }}
+			{{ heading("20px", "h3", "Number-based table")}}
+			{{ paragraph("10px", false, "If the table has numeric content the data is right aligned.")}}
+			{{ lccTable({
+					caption: "Dates and amounts",
+					firstCellIsHeader: true,
+					head: [
+							{
+								text: "Month you apply"
+							},
+							{
+								text: "Rate for bicycles",
+								format: "numeric"
+							},
+							{
+								text: "Rate for vehicles",
+								format: "numeric"
+							}
+						],
+					rows: [
+						[
+							{
+								text: "January"
+							},
+							{
+								text: "£85",
+								format: "numeric"
+							},
+							{
+								text: "£95",
+								format: "numeric"
+							}
+						],
+						[
+							{
+								text: "February"
+							},
+							{
+								text: "£75",
+								format: "numeric"
+							},
+							{
+								text: "£55",
+								format: "numeric"
+							}
+						],
+						[
+							{
+								text: "March"
+							},
+							{
+								text: "£165",
+								format: "numeric"
+							},
+							{
+								text: "£125",
+								format: "numeric"
+							}
+						]
+					]
+				}) }}
+		</mj-column>
+	</mj-section>
+
 {% endblock %}

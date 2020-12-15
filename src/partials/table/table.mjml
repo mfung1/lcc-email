@@ -1,0 +1,43 @@
+{% macro lccTable(params) %}
+<mj-table css-class="lcc-table" font-size="19px" line-height="25px" padding="0 0 30px" color="#424141" font-family="Roboto">
+  {% if params.caption %}
+  <caption class="lcc-table__caption{% if params.captionClasses%}{{params.captionClasses}}{% endif %}">{{params.caption}}</caption>
+  {% endif %}
+  <thead class="lcc-table__head">
+    <tr class="lcc-table__row">
+    {% for item in params.head %}
+      <th scope="col" class="lcc-table__header
+      {%- if item.format %} lcc-table__header--{{ item.format }}{% endif %}
+      {%- if item.classes %} {{ item.classes }}{% endif %}"
+      {%- if item.colspan %} colspan="{{ item.colspan }}"{% endif %}
+      {%- if item.rowspan %} rowspan="{{ item.rowspan }}"{% endif %}{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ item.html |safe if item.html else item.text }}</th>
+    {% endfor %}
+    </tr>
+  </thead>
+  <tbody class="lcc-table__body">
+    {% for row in params.rows %}
+      {% if row %}
+        <tr class="lcc-table__row">
+        {% for cell in row %}
+          {% set commonAttributes %}
+            {%- if cell.colspan %} colspan="{{ cell.colspan }}"{% endif %}
+            {%- if cell.rowspan %} rowspan="{{ cell.rowspan }}"{% endif %}{% for attribute, value in cell.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
+          {% endset %}
+          {% if loop.first and params.firstCellIsHeader %}
+          <th scope="row" class="lcc-table__header{%- if cell.classes %} {{ cell.classes }}{% endif %}"
+            {{- commonAttributes | safe -}}
+          >{{ cell.html | safe if cell.html else cell.text }}</th>
+          {% else %}
+          <td class="lcc-table__cell
+            {%- if cell.format %} lcc-table__cell--{{ cell.format }}{% endif %}
+            {%- if cell.classes %} {{ cell.classes }}{% endif %}"
+            {{- commonAttributes | safe -}}
+          >{{ cell.html | safe if cell.html else cell.text }}</td>
+          {% endif %}
+        {% endfor %}
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</mj-table>
+{% endmacro %}
