@@ -1,5 +1,22 @@
 index_title: "Important information from Lincolnshire County Council"
 index_description: "Lorem ipsum dolor sit amet, consectetur sit amet"
+templates:
+  click_tip:
+    subject: "Your Click and Tip Confirmation"
+    preheader: "Thanks for booking your click and tip slot. Here's the details for your booking."
+    mainHeading: "Your Click and Tip confirmation"
+    greeting: "Dear Ms. J Bloggs,"
+    firstParagraph: >-
+      Thank you for booking your click and tip slot with us.
+      Here's the details for your booking,
+      please bring these along with you when you visit the tip.
+    details:
+      item1:
+        name: "Permit Number"
+        value: "123456789"
+      item2:
+        name: "Date received"
+        value: "15 March 2015"
 example:
   subject: "Important information from Lincolnshire County Council"
   preheader: "Lorem ipsum dolor sit amet, consectetur sit amet"  
@@ -10,7 +27,7 @@ example:
   buttonChevron: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXCAYAAADQpsWBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEqSURBVHgBldQxTsMwFADQ/524HQCJI2RkAGSkIjEmC2SEG7Q34AacoSconICVTsmexVI5AEdgTUtqvl0lbd3Eif9gfSd+8rfjGG8nj28K4BUY5sG6nEmZ/0JP4M39k2o6AJJtyqQPMlCQ1x3SYsvHmRDxpRMFf+ULgpI+EHWjB2z5KFOAYkipTDf6BdusE3vGajRetJZXJzWk9Af28pk2atGJahgEeAwBpjZEaAnxkEZVpTJKo4PH76tiOetEfbATuaAT6biepDGigU0wF7gSaUTgaBPoU8zRBTi3S8OPVfE1RV9gMl9wgtoArUF+F8u7w3HNRkR0aEOuPm0QnpWJVcxuJg3O6XegjrCBzE9POfoCHeFFaI7/YLBbE6rYBxikFJsbQHfFEKDjHxdspLlXba8ZAAAAAElFTkSuQmCC"
   details:
     item1:
-      name: "Application Reference"
+      name: "Permit Number"
       value: "123456789"
     item2:
       name: "Date received"
