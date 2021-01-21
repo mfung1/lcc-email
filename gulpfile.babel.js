@@ -2,6 +2,7 @@
 
 import yaml          from 'js-yaml';
 import browser       from 'browser-sync';
+import plumber       from 'gulp-plumber';
 import rimraf        from 'rimraf';
 import fs            from 'fs';
 import gulp          from 'gulp';
@@ -9,6 +10,7 @@ import mjmlGulp      from 'gulp-mjml';
 import mjml          from 'mjml';
 import nunjucks      from 'gulp-nunjucks-render';
 import data          from 'gulp-data';
+import del           from 'del';
 
 const PATHS = {
   src: './src/{layouts,partials,templates}/**/*.mjml',
@@ -25,14 +27,22 @@ const PATHS = {
   dist: './dist/',
   startPath: './dist/code/html/index.html'
 }
+export const customPlumber = (errTitle) => {
+  return plumber({
+    errorHandler: notify.onError({
+      title: errTitle || "Error running Gulp",
+      message: "Error: <%= error.message %>",
+    })
+  });
+}
+
+export const clean = () => {
+  return del(['./dist/code/**/**']);
+}
 
 function load_data() {
   let yml = fs.readFileSync(PATHS.data, 'utf8')
   return yaml.load(yml);
-}
-
-export function clean(done) {
-  rimraf('./dist/code/**/**', done);
 }
 
 export function buildTemplates() {
@@ -53,13 +63,9 @@ export function buildTemplates() {
 }
 
 export function buildMjml() {
-  const options = {
-    beautify: true,
-    minify: false
-  };
 
   return gulp.src(PATHS.mjml.src)
-    .pipe(mjmlGulp(mjml, options))
+    .pipe(mjmlGulp(mjml))
     .pipe(gulp.dest(PATHS.htmlDist));
 }
 
