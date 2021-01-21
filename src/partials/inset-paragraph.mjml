@@ -3,7 +3,7 @@
 <mj-section css-class="lcc-inset-paragraph pd-20-dt" padding="0 0 30px">
   <mj-column border-left="10px solid #cccccc" padding="15px 0 15px 15px">
     <mj-text padding="0" font-size="36px" line-height="40px">
-      <p class="lcc-body">{% if intro %}{{introText}}{%endif%}</p>
+      {% if intro %}<p class="lcc-body">{{introText}}</p>{%endif%}
       {% if details %}
         {% for item, data in details %}
           {{keyValue(data.name, data.value)}}

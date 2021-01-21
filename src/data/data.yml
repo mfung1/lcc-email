@@ -4,7 +4,16 @@ templates:
   click_tip:
     subject: "Your Click and Tip Confirmation"
     preheader: "Thanks for booking your click and tip slot. Here's the details for your booking."
-    mainHeading: "Your Click and Tip confirmation"
+    masthead:
+      mainHeading: "Your booking confirmation"
+      items:
+        item1:
+          name: "Booking Reference"
+          value: "B00K1NG"
+        item2:
+          name: "Permit Number"
+          value: "123456789"
+    
     greeting: "Dear Ms. J Bloggs,"
     firstParagraph: >-
       Thank you for booking your click and tip slot with us.

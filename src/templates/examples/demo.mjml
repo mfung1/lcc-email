@@ -1,11 +1,14 @@
 {% extends "default.mjml" %}
-
+{% from "typography/heading.mjml" import heading %}
+{% from "typography/paragraph.mjml" import paragraph %}
+{% from "masthead/masthead.mjml" import masthead %}
 {% block title %}{{templates.click_tip.subject}}{% endblock %}
 {% block preheader %}{{templates.click_tip.preheader}}{% endblock %}
 
 {% block containerbackground %}background-color="#ffffff"{% endblock %}
 
 {% block content %}
+	{{masthead(templates.click_tip.masthead)}}
   <!-- Intro text -->
 	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
 		<mj-column padding="0">

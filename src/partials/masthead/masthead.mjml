@@ -1,0 +1,20 @@
+{% from "typography/callout.mjml" import callout %}
+{% from "typography/heading.mjml" import heading %}
+{% from "typography/paragraph.mjml" import paragraph %}
+{% macro masthead(bgcolor="#eff2d8", details) %}
+<mj-section css-class="lcc-masthead" background-color="{{bgcolor}}" padding="40px 20px">
+  <mj-column padding="0" align="center">
+  {% if details %}
+    {{ heading("20px", "h2", details.mainHeading, textAlign="center")}}
+    {% for item, data in details.items %}
+      {{ paragraph("10px", true, data.name, textAlign="center")}}
+      {% if loop.last %}
+        {{ callout("0", false, data.value, "center")}}
+      {% else %}
+        {{ callout("20px", false, data.value, "center")}}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  </mj-column>
+</mj-section>
+{% endmacro %}
