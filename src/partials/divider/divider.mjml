@@ -1,0 +1,3 @@
+{% macro divider() %}
+<mj-divider border-color="#424141" border-width="1px" padding="0 0 50px"/>
+{% endmacro %}

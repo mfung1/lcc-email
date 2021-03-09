@@ -3,21 +3,31 @@
 {% from "typography/captioned-link.mjml" import captionedLink %}
 {% from "typography/heading.mjml" import heading %}
 {% from "typography/paragraph.mjml" import paragraph %}
+{% from "divider/divider.mjml" import divider %}
 
 {% block title %} {{ index_title }} {% endblock %}
 {% block preheader %} {{ index_description }} {% endblock %}
 
 {% block content %}
 
-	<mj-section background-color="#f0f0f0" padding-top="40px" padding-bottom="40px">
-		<mj-column>
-
-			<mj-text
-				align="center"
-				font-size="30px"
-				font-weight="bold">{{ index_title }}</mj-text>
-			<mj-text align="center">{{ index_description }}</mj-text>
-
+	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("h1", "LCC Email Kit")}}
+			{{ paragraph(
+					"20px",
+					false,
+					"Rapidly create HTML Email templates for LCC services in XFP"
+				)
+			}}
+			{{ divider() }}
+			{{ heading("h2", "Tutorials and Examples")}}
+			{{ paragraph(
+					"20px",
+					false,
+					"You can follow tutorials, view examples and templates."
+				)
+			}}
+			{{}}
 		</mj-column>
 	</mj-section>
 

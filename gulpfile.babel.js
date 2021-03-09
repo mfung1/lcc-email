@@ -10,12 +10,12 @@ const data          = require('gulp-data') ;
 const del           = require('del');
 
 const PATHS = {
-  src: './src/{layouts,partials,templates}/**/*.mjml',
+  src: './src/{layouts,partials,views}/**/*.mjml',
   data: './src/data/data.yml',
   assets: './src/assets/',
   layouts: './src/layouts/',
   partials: './src/partials/',
-  templates: './src/templates/**/*.mjml',
+  views: './src/views/**/*.mjml',
   mjml: {
     src: './dist/code/mjml/**/*.mjml',
     dist: './dist/code/mjml/',
@@ -43,7 +43,7 @@ function load_data() {
 }
 
 export function buildTemplates() {
-  return gulp.src(PATHS.templates)
+  return gulp.src(PATHS.views)
     .pipe(data(load_data))
     .pipe(nunjucks({
       path: [

@@ -1,5 +1,12 @@
 {% macro heading(paddingBottom="", level="", text="", color="", textAlign="") %}
-<mj-text padding="0 0 {{paddingBottom}}" {% if textAlign %}align="{{textAlign}}"{% endif %}font-size="36px" line-height="40px">
+{% macro heading(level="", text="", color="") %}
+<mj-text
+  padding="0 0 {%
+    if level == "h1"
+  %}30px{% elseif level == "h2" %}20px{% else %}10px{%endif%}"
+  {% if textAlign %}align="{{textAlign}}"{% endif %}
+  font-size="36px"
+  line-height="40px">
   <{{level}} class="lcc-heading-{{level}}{% if color %} lcc-col-{{color}}{% endif %}">{{text}}</{{level}}>
 </mj-text>
 {% endmacro %}

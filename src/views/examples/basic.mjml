@@ -7,13 +7,10 @@
 
 {% block content %}
 
-	<!-- Header -->
-	{% include "global/basic-header.mjml" %}
-
 	<!-- Intro text -->
 	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
 		<mj-column padding="0">
-			{{ heading("30px", "h1", "Main heading")}}
+			{{ heading("h1", "Main heading")}}
 			{{ paragraph("20px", true,"Dear Joe Bloggs,")}}
 			{{ paragraph("20px", false, example.firstParagraph)}}
 			{{ paragraph("20px", false, example.secondParagraph)}}
@@ -23,25 +20,25 @@
 	{{insetParagraph(true, "This is an inset paragraph used for data or callouts", example.details)}}
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
-			{{ heading("30px", "h2", "Call to actions")}}
+			{{ heading("h2", "Call to actions")}}
 			{{ paragraph("0px", false, "You should only use one CTA per email to avoid confusing the user.")}}
 		</mj-column>
 	</mj-section>
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
-			{{ heading("20px", "h3", "Primary")}}
+			{{ heading("h3", "Primary")}}
 			{{ button("primary", "Call to action", "https://www.lincolnshire.gov.uk") }}
 		</mj-column>
 	</mj-section>
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
-			{{ heading("20px", "h3", "Secondary")}}
+			{{ heading("h3", "Secondary")}}
 			{{ button("secondary", "Call to action", "https://www.lincolnshire.gov.uk") }}
 		</mj-column>
 	</mj-section>
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
-			{{ heading("30px", "h2", "Secondary Heading that can run over multiple lines")}}
+			{{ heading("h2", "Secondary Heading that can run over multiple lines")}}
 			{{ captionedLink("Intro text before a link:", false, "https://www.lincolnshire.gov.uk", "https://www.lincolnshire.gov.uk")}}
 			{{ captionedLink("Intro text before a telphone number:", true, "01234 567 890", "01234 567 890")}}
 			{{ paragraph("10px", false, "Kind regards,")}}
@@ -50,8 +47,8 @@
 	</mj-section>
 	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
 		<mj-column padding="0">
-			{{ heading("30px", "h2", "Tables")}}
-			{{ heading("20px", "h3", "Text-based table")}}
+			{{ heading("h2", "Tables")}}
+			{{ heading("h3", "Text-based table")}}
 			{{ paragraph("10px", false, "If the table has textual content the data is left aligned.")}}
 			{{ lccTable({
 					caption: "Dates and amounts",
@@ -91,7 +88,7 @@
 						]
 					]
 				}) }}
-			{{ heading("20px", "h3", "Number-based table")}}
+			{{ heading("h3", "Number-based table")}}
 			{{ paragraph("10px", false, "If the table has numeric content the data is right aligned.")}}
 			{{ lccTable({
 					caption: "Dates and amounts",
