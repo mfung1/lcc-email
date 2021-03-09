@@ -1,11 +1,17 @@
 {% from "typography/heading.mjml" import heading %}
 {% from "typography/paragraph.mjml" import paragraph %}
 {% from "typography/line-break.mjml" import linebreak %}
+{% from "spacer/spacer.mjml" import spacer %}
 {% from "inset-paragraph.mjml" import insetParagraph %}
 {% from "typography/captioned-link.mjml" import captionedLink %}
 {% from "typography/key-value.mjml" import keyValue %}
+{% from "typography/key-value.mjml" import keyValue %}
 {% from "buttons/button.mjml" import button with context %}
 {% from "table/table.mjml" import lccTable %}
+{% from "typography/heading.mjml" import heading %}
+{% from "typography/paragraph.mjml" import paragraph %}
+{% from "masthead/masthead.mjml" import masthead %}
+{% from "typography/list.mjml" import list %}
 <mjml>
 	<mj-head>
 		<mj-title>{% block title %}{% endblock %}</mj-title>
@@ -21,6 +27,7 @@
 		<mj-font name="Roboto Condensed" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700" />
 		<mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
 		<mj-style>
+			* {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale;}
 			@font-face {
 				font-family: 'Roboto';
 				font-style: normal;
@@ -96,6 +103,19 @@
 			.lcc-bold {
 				font-weight: bolder;
 			}
+			.lcc-list {
+				margin: 0;
+				margin-left: 20px;
+				padding: 0;
+				color: #A9B62C;
+				font-family: Roboto, Helvetica, Arial, sans-serif;
+			}
+			.lcc-list_item {
+				padding: 0 0 20px;
+			}
+			.lcc-list_item span {
+				color: #424141;
+			}
 			.lcc-link {
 				color: #A9B62C;
 				text-decoration: underline;
@@ -115,17 +135,20 @@
 			}
 			.lcc-button > table > tbody > tr > td,
 			.lcc-button > table > tbody > tr > td > a {
-				transition: background-color .3s ease;
+				transition: background-color .3s ease, box-shadow .3s ease;
+				box-shadow: 0 4px transparent;
 			}
 			.lcc-button--primary > table > tbody > tr > td:hover,
 			.lcc-button--primary > table > tbody > tr > td:hover > a {
-				background: #99A428!important;
-				transition: background-color .3s ease;
+				background: #f1b204!important;
+				box-shadow: 0 4px #424141;
+				transition: background-color .3s ease, box-shadow .3s ease;
 			}
 			.lcc-button--secondary > table > tbody > tr > td:hover,
 			.lcc-button--secondary > table > tbody > tr > td:hover > a {
 				background: #C9C9C9!important;
-				transition: background-color .3s ease;
+				box-shadow: 0 4px #424141;
+				transition: background-color .3s ease, box-shadow .3s ease;
 			}
 			.lcc-button--primary a:focus {
 				background-color: #FBBA08!important;

@@ -1,8 +1,8 @@
 {% from "typography/paragraph.mjml" import paragraph %}
-<mj-section css-class="pd-20-dt" padding="0px 10px" background-color="#ffffff">
+<mj-section css-class="pd-20-dt" padding="0px 10px 40px" background-color="#ffffff">
 	<mj-column align="left" padding="0">
     {{ paragraph("10px", false, "Kind regards,")}}
 		
-			{{ paragraph("0px", true, "Department Name")}}
+			{{ paragraph("0px", true, templates.click_tip.team)}}
 	</mj-column>
 </mj-section>

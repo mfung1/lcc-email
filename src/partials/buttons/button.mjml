@@ -1,6 +1,6 @@
-{% macro button(theme="", text="", link="", padding="false") %}
+{% macro button(theme="", text="", link="", padding=false) %}
   {% if theme=="primary" %}
-    {% set bgColor = "#A9B62C" %}
+    {% set bgColor = "#FBBA08" %}
     {% set color = "#424141" %}
   {% elseif theme=="secondary" %}
     {% set bgColor = "#D3D3D3" %}
@@ -8,14 +8,13 @@
   {% endif %}
   <mj-button 
     border-radius="0"
-    border-bottom="4px solid #000000"
     css-class="lcc-button lcc-button--{{theme}} lcc-bold"
     href="{{link}}"
     text-align="left"
     font-size="16px"
     line-height="25px"
     font-weight="700"
-    {% if padding == true %}
+    {% if padding %}
     padding="0 0 30px"
     {% else %}
     padding="0"

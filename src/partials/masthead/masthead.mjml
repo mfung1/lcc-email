@@ -2,10 +2,10 @@
 {% from "typography/heading.mjml" import heading %}
 {% from "typography/paragraph.mjml" import paragraph %}
 {% macro masthead(bgcolor="#eff2d8", details) %}
-<mj-section css-class="lcc-masthead" background-color="{{bgcolor}}" padding="40px 20px">
-  <mj-column padding="0" align="center">
+<mj-section css-class="lcc-masthead pd-20-dt" padding="0 20px">
+  <mj-column padding="40px 20px" background-color="{{bgcolor}}" align="center">
   {% if details %}
-    {{ heading("20px", "h2", details.mainHeading, textAlign="center")}}
+    {{ callout("20px", false, details.heading, "center")}}
     {% for item, data in details.items %}
       {{ paragraph("10px", true, data.name, textAlign="center")}}
       {% if loop.last %}

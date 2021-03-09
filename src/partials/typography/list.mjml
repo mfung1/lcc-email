@@ -1,0 +1,16 @@
+{% macro list(type="", listItems) %}
+  {% set listType = "ul" %}
+  {% if type == "ordered" %}
+    {% set listType = "ol" %}
+  {% endif %}
+  <mj-text
+  padding="0 0 30px"
+  font-size="16px"
+  line-height="20px">
+    <{{listType}} class="lcc-list">
+      {% for listItem in listItems %}
+        <li class="lcc-list_item"><span>{{listItem}}</span></li>
+      {% endfor %}
+    </{{listType}}>
+  </mj-text>
+{% endmacro %}

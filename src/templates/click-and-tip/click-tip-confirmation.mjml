@@ -1,0 +1,48 @@
+{% extends "default.mjml" %}
+{% from "spacer/spacer.mjml" import spacer %}
+{% from "masthead/masthead.mjml" import masthead %}
+{% block title %}{{templates.click_tip.subject}}{% endblock %}
+{% block preheader %}{{templates.click_tip.preheader}}{% endblock %}
+
+{% block containerbackground %}background-color="#ffffff"{% endblock %}
+
+{% block content %}
+	{{spacer("40")}}
+	{{masthead(templates.click_tip.masthead)}}
+  <!-- Intro text -->
+	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("30px", "h1", templates.click_tip.mainHeading)}}
+			{{ paragraph("20px", true, templates.click_tip.greeting)}}
+			{{ paragraph("20px", false, templates.click_tip.firstParagraph)}}
+		</mj-column>
+	</mj-section>
+	{{ insetParagraph(details=templates.click_tip.details) }}
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 10px">
+		<mj-column padding="0">
+			{{ paragraph("20px", false, templates.click_tip.thirdParagraph)}}
+			{{ button("primary", "Take survey", "https://www.lincolnshire.gov.uk", "true") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 10px">
+		<mj-column padding="0">
+			{{ heading("20px", "h2", templates.click_tip.secondHeading)}}
+			{{ paragraph("20px", false, templates.click_tip.fourthParagraph)}}
+			{{ paragraph("20px", false, templates.click_tip.fifthParagraph)}}
+			{{ paragraph("20px", false, templates.click_tip.sixthParagraph)}}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 10px">
+		<mj-column padding="0">
+			{{ heading("20px", "h2", templates.click_tip.thirdHeading)}}
+			{{ paragraph("20px", false, templates.click_tip.seventhParagraph)}}
+			{{ button("secondary", "Cancel booking", "https://www.lincolnshire.gov.uk", "true") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 10px">
+		<mj-column padding="0">
+			{{ heading("20px", "h2", templates.click_tip.fourthHeading)}}
+			{{ list(listItems=templates.click_tip.listItems)}}
+		</mj-column>
+	</mj-section>
+{% endblock %}

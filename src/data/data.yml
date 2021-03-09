@@ -1,31 +1,81 @@
 index_title: "Important information from Lincolnshire County Council"
 index_description: "Lorem ipsum dolor sit amet, consectetur sit amet"
+logo: "https://www.lincolnshire.gov.uk/site/dist/images/site-logo.png"
 templates:
   click_tip:
-    subject: "Your Click and Tip Confirmation"
+    subject: "Booking confirmation"
     preheader: "Thanks for booking your click and tip slot. Here's the details for your booking."
     masthead:
-      mainHeading: "Your booking confirmation"
+      heading: "Booking confirmation"
       items:
         item1:
-          name: "Booking Reference"
-          value: "B00K1NG"
+          name: "Your booking reference is"
+          value: "{{case.reference}}"
         item2:
-          name: "Permit Number"
-          value: "123456789"
-    
-    greeting: "Dear Ms. J Bloggs,"
+          name: "Vehicle registration"
+          value: "{{case.values.vehicle_registration.value}}"
+    mainHeading: "Booking confirmation"
+    greeting: "Dear {{case.values.first_name.value}},"
     firstParagraph: >-
-      Thank you for booking your click and tip slot with us.
-      Here's the details for your booking,
-      please bring these along with you when you visit the tip.
+      You have successfully booked to visit:
     details:
       item1:
-        name: "Permit Number"
-        value: "123456789"
+        name: "Site"
+        value: "{{case.values.recycling_centre_1.label}}."
       item2:
-        name: "Date received"
-        value: "15 March 2015"
+        name: "Time and date"
+        value: "{{ case.values.slot_start_time.value|date('d/m/Y H:i:s') }}"
+      item3:
+        name: "Your address"
+        value: "{{case.values.address.value}}."
+    thirdParagraph: >-
+      To help us improve our service,
+      please complete a quick survey about
+      the booking process.
+    secondHeading: "Before you arrive"
+    fourthParagraph: >-
+      You must bring this booking confirmation with you,
+      plus proof of your address and identity.
+    fifthParagraph: >-
+      Your vehicle registration must match your booking.
+    sixthParagraph: >-
+      If you bring the wrong waste type on the wrong day,
+      we will not let you unload it.
+    captionedLink:
+      beforeText: >-
+        For more details, visit our website:
+      linkURL:
+        https://www.lincolnshire.gov.uk/
+      linkText:
+        https://www.lincolnshire.gov.uk/
+    thirdHeading: "Cancel your booking"
+    seventhParagraph: >-
+      If you've changed your mind and would like to cancel your booking,
+      please confirm this on our website.
+    fourthHeading: "When you arrive"
+    eighthParagraph: >-
+      Keep your windows closed and remain in your car until site staff instruct you to unload your waste.
+    ninthParagraph: >-
+      You must keep two metres away from other site users and, if possible, wear a face-covering
+    tenthParagraph: >-
+      We will not allow more than two people per household out of the vehicle on site
+    eleventhParagraph: >-
+      Site staff will not be able to help you unload
+    twelthParagraph: >-
+      If you have a disability, please bring one member of your household to unload for you
+    thirteenthParagraph: >-
+      We will not allow access to any toilets or welfare facilities on sites
+    fourteenthParagraph: >-
+      Respect staff on-site and follow their instructions. They are there to help and will not tolerate abuse
+    listItems:
+      - Keep your windows closed and remain in your car until site staff instruct you to unload your waste.
+      - You must keep two metres away from other site users and, if possible, wear a face-covering
+      - We will not allow more than two people per household out of the vehicle on site
+      - Site staff will not be able to help you unload
+      - If you have a disability, please bring one member of your household to unload for you
+      - We will not allow access to any toilets or welfare facilities on sites
+      - Respect staff on-site and follow their instructions. They are there to help and will not tolerate abuse
+    team: "Lincolnshire County Council"
 example:
   subject: "Important information from Lincolnshire County Council"
   preheader: "Lorem ipsum dolor sit amet, consectetur sit amet"  

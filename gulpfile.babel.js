@@ -1,16 +1,13 @@
 'use strict';
 
-import yaml          from 'js-yaml';
-import browser       from 'browser-sync';
-import plumber       from 'gulp-plumber';
-import rimraf        from 'rimraf';
-import fs            from 'fs';
-import gulp          from 'gulp';
-import mjmlGulp      from 'gulp-mjml';
-import mjml          from 'mjml';
-import nunjucks      from 'gulp-nunjucks-render';
-import data          from 'gulp-data';
-import del           from 'del';
+const yaml          = require('js-yaml') ;
+const browser       = require('browser-sync') ;
+const plumber       = require('gulp-plumber') ;
+const fs            = require('fs') ;
+const gulp          = require('gulp') ;
+const nunjucks      = require('gulp-nunjucks-render') ;
+const data          = require('gulp-data') ;
+const del           = require('del');
 
 const PATHS = {
   src: './src/{layouts,partials,templates}/**/*.mjml',
@@ -62,13 +59,6 @@ export function buildTemplates() {
     .pipe(gulp.dest(PATHS.mjml.dist));
 }
 
-export function buildMjml() {
-
-  return gulp.src(PATHS.mjml.src)
-    .pipe(mjmlGulp(mjml))
-    .pipe(gulp.dest(PATHS.htmlDist));
-}
-
 export function server(done) {
   const options = {
     server: {
@@ -85,12 +75,12 @@ export function server(done) {
 }
 
 export function watch() {
-  gulp.watch(PATHS.data).on('all', gulp.series(buildTemplates, buildMjml, browser.reload));
-  gulp.watch(PATHS.src).on('all', gulp.series(buildTemplates, buildMjml, browser.reload));
+  gulp.watch(PATHS.data).on('all', gulp.series(buildTemplates, browser.reload));
+  gulp.watch(PATHS.src).on('all', gulp.series(buildTemplates, browser.reload));
 }
 
 gulp.task('build',
-  gulp.series(clean, buildTemplates, buildMjml));
+  gulp.series(clean, buildTemplates));
 
 gulp.task('default',
   gulp.series('build', gulp.parallel(server, watch)));
