@@ -1,11 +1,5 @@
 {% extends "without-footer.mjml" %}
 
-<!-- {% from "typography/captioned-link.mjml" import captionedLink %}
-{% from "typography/heading.mjml" import heading %}
-{% from "typography/paragraph.mjml" import paragraph %}
-{% from "divider/divider.mjml" import divider %}
-{% from "typography/link.mjml" import link %} -->
-
 {% block title %} {{ index_title }} {% endblock %}
 {% block preheader %} {{ index_description }} {% endblock %}
 

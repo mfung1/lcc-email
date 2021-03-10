@@ -38,7 +38,7 @@
 			]}) }}
       {{ paragraph("30px", false, "It will take about an hour to finish this tutorial.") }}
       {{ heading("h2", "Before you start")}}
-      {{ paragraph("10px", false, "You'll need to have the kit <a href='/tutorials/install' class='lcc-link lcc-link--inline'>downloaded and installed</a>.") }}
+      {{ paragraph("10px", false, "You'll need to have the kit <a href='/docs/tutorials/install' class='lcc-link lcc-link--inline'>downloaded and installed</a>.") }}
 			{{ paragraph("10px", false, "You'll also need to have a code editor installed, you're free to use whatever editor you like but this tutorial assumes you're using Visual Studio Code.") }}
 			{{ link("10px", false, "https://code.visualstudio.com/", "Install Visual Studio Code")}}
 			{{ link("10px", false, "https://code.visualstudio.com/", "Next (open your template in your editor)")}}

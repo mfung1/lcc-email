@@ -1,0 +1,5 @@
+{% macro code(text="") %}
+<mj-text padding="0 0 10px" font-size="19px" line-height="25px">
+  <pre><code>{{text}}</code></pre>
+</mj-text>
+{% endmacro %}

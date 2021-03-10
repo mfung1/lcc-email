@@ -1,0 +1,61 @@
+{% extends "without-footer.mjml" %}
+
+{% block title %}Tutorials and Examples{% endblock %}
+
+{% block containerbackground %}background-color="#ffffff"{% endblock %}
+
+{% block content %}
+	<!-- Breadcrumbs -->
+	<mj-section css-class="pd-20-dt" padding="20px 10px 0" text-align="left">
+		<mj-column padding="0" width="80px" vertical-align="middle">
+			{{ link("0", false, "/", "Email Kit") }}
+		</mj-column>
+		<mj-column padding="0 10px 0 0" width="7px" vertical-align="middle">
+			<mj-text padding="0">
+				<span style="display: block;border: solid;border-width: 1px 1px 0 0;border-color: #424141;width: 7px;height: 7px;transform:rotate(45deg)"></span>
+			</mj-text>
+		</mj-column>
+		<mj-column padding="0 0 0 10px" width="250px" vertical-align="middle">
+			{{ link("0", false, "/docs/tutorials", "Tutorials and Examples") }}
+		</mj-column>
+	</mj-section>
+	<!-- /Breadcrumbs -->
+  <!-- Intro text -->
+	<mj-section css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("h1", "Requirements")}}
+			{{ paragraph("10px", false, "The kit runs on Mac, Windows and Linux. At a minimum you'll need Node.js and a web browser.") }}
+      {{ heading("h2", "Software you need")}}
+      {{ paragraph("10px", false, "You'll usually need admin access to your machine to install the software.") }}
+      {{ paragraph("10px", false, "If you do not have admin access, ask your IT team to install the software for you.") }}
+      {{ paragraph("10px", false, "You'll need:") }}
+			{{ list({type:"unordered", listItemType:"text", listItems:[
+			{
+				text: "Node.js 14.x.x"
+			},
+			{
+				text: "Git Bash (if you're using Windows, see below)"
+			}
+			]}) }}
+      {{ heading("h2", "Terminal")}}
+      {{ paragraph("30px", false, "You'll need a terminal application to install, start and stop the kit. Using a terminal is sometimes called 'using the command line'.") }}
+      {{ heading("h3", "Mac users")}}
+      {{ paragraph("30px", false, "Macs come with <code>Terminal.app</code>. It's located in the <code>Utilities</code> folder in the <code>Applications</code> folder. You can also find it using spotlight (magnifying glass in the top right) and typing 'terminal'.") }}
+      {{ heading("h3", "Windows users")}}
+      {{ paragraph("10px", false, "This guide will use <code>Git Bash</code> as a terminal instead of the existing <code>CMD</code> application. Git Bash is more fully featured and uses the same commands as Mac and Linux, so instructions in this guide work for all.") }}
+      {{ paragraph("30px", false, "Installing Git Bash installs two things for you: a terminal (for entering commands), and Git (used later to share your work with others).") }}
+      {{ paragraph("20px", true, "Installing Git Bash")}}
+      {{ paragraph("10px", false, "Download <a href='https://git-scm.com/download/win' class='lcc-link lcc-link--inline'>Git Bash</a>.")}}
+      {{ paragraph("30px", false, "Install it with all the default options.")}}
+      {{ heading("h3", "Entering commands in the terminal")}}
+      {{ paragraph("10px", false, "Commands to be entered in to the terminal will be inset like this:")}}
+      {{ code("command to be typed in to the terminal")}}
+      {{ paragraph("10px", false, "Once you've typed the command, press enter to run it.")}}
+      {{ heading("h2", "Node.js version 14 LTS")}}
+      {{ paragraph("10px", false, "If it says <code>command not found</code> or <code>Error 0x2 starting node.exe --version</code> you don't have Node and will need to download and install it.")}}
+      {{ paragraph("10px", false, "If the number starts with 14 you have the correct version installed.")}}
+      {{ paragraph("10px", false, "If it says another number, you need to download and install version 14.")}}
+      
+		</mj-column>
+	</mj-section>
+{% endblock %}
