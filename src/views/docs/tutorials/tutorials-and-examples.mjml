@@ -1,0 +1,16 @@
+{% extends "without-footer.mjml" %}
+
+{% block title %}Tutorials and Examples{% endblock %}
+
+{% block containerbackground %}background-color="#ffffff"{% endblock %}
+
+{% block content %}
+  <!-- Intro text -->
+	<mj-section css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("h1", "Tutorials and Examples")}}
+			{{ paragraph("20px", true, "Download and Install")}}
+			{{ paragraph("20px", false, templates.click_tip.firstParagraph)}}
+		</mj-column>
+	</mj-section>
+{% endblock %}

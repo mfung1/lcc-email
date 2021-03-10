@@ -1,0 +1,197 @@
+{% extends "without-footer.mjml" %}
+
+{% block title %}Component Library{% endblock %}
+
+{% block containerbackground %}background-color="#ffffff"{% endblock %}
+
+{% block content %}
+
+	<!-- Intro text -->
+	<mj-section full-width="true" css-class="pd-20-dt" padding="20px 10px 0" text-align="left">
+		<mj-column padding="0" width="80px" text-align="left" vertical-align="middle">
+			{{ link("0", false, "/", "Email Kit") }}
+		</mj-column>
+		<mj-column padding="0 10px 0 0" width="7px" text-align="left" vertical-align="middle">
+			<mj-text padding="0">
+				<span style="display: block;border: solid;border-width: 1px 1px 0 0;border-color: #424141;width: 7px;height: 7px;transform:rotate(45deg)"></span>
+				<!-- <img src="{{example.buttonChevron}}" style="display: block;height:23px;width:13px;vertical-align:middle;" height="23" width="18" alt=""/> -->
+			</mj-text>
+		</mj-column>
+		<mj-column padding="0 0 0 10px" width="150px" text-align="left" vertical-align="middle">
+			{{ link("0", false, "/components", "Components") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+      {{ heading("h1", "Components")}}
+      {{ paragraph("20px", true,"This is a list of all the components that are currently available in the library.")}}
+      {{ captionedLink("For help including and using components:", false, "/docs/tutorials", "Read the documentation")}}
+      {{ divider() }}
+      {{ callout("10px", true, "Typography", true)}}
+      {{ paragraph("30px", true,"All emails should start with a H1 as the main subject of the email, such as Booking Confirmation. You must use all Headings and Body copy inside a section component")}}
+			{{ heading("h2", "Headings")}}
+			{{ paragraph("30px", false,"You should use headings where appropriate, and they should always follow a natural flow. Where possible, content shouldn't need to reach a third heading level, but one has been provided in case.")}}
+      {{ callout("5px", true, "H1", true)}}
+      {{ heading("h1", "36/40 Roboto Condensed that can run over two lines maximum.")}}
+			{{ callout("5px", true, "H2", true)}}
+      {{ heading("h2", "24/30 Roboto Condensed that can run over two lines maximum.")}}
+			{{ callout("5px", true, "H3", true)}}
+      {{ heading("h3", "Level Three Heading")}}
+			{{ spacer("30")}}
+      {{ heading("h2", "Body Copy")}}
+			{{ paragraph("30px", false,"These components form the main body of content throughout any email and can contain text or HTML. Note that any HTML you write is not pre-styled and may not render as intended. You should only need to use formatting tags.")}}
+      {{ callout("5px", true, "Bold Copy", true)}}
+			{{ paragraph("20px", true,"Bold text that can run over multiple lines, it's usually used for standout information that isn't part of a larger paragraph")}}
+			{{ callout("5px", true, "Regular Copy", true)}}
+			{{ paragraph("20px", false, "Regular text that can run over multiple lines, it's used as the basis for all copy in an email template.")}}
+			{{ callout("5px", true, "Regular Copy with custom HTML", true)}}
+			{{ paragraph("20px", false, "Regular text that can run over multiple lines, it's used as the basis for all copy in an email template. It can <strong>also</strong> contain custom HTML that makes text look <b>bold</b>, <i>italic</i> or <sup>Superscript</sup> for example.")}}
+			{{ callout("5px", true, "Regular Copy with line break", true)}}
+			{{ linebreak("20px", "This paragraph includes a line break:", "This is the text after the line break.")}}
+			{{ divider() }}
+			{{ callout("10px", true, "Inset Paragraph", true)}}
+      {{ paragraph("10px", false,"The inset paragraph component should be used when you need to call out information that is important to the user, such as a reference number or date of payment etc.")}}
+			{{ paragraph("30px", false,"This component uses it's own section component so you should not include it inside a section component as it will break.")}}
+			 
+		</mj-column>
+	</mj-section>
+	{{insetParagraph(true, "This is an inset paragraph used for data or callouts", example.details)}}
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ divider() }} 
+			{{ heading("h2", "Button")}}
+			{{ paragraph("0px", false, "You should only use one Button per email to avoid confusing the user, as users tend to gravitate to the next step to getting their task done, and multiple interactable elements add confusion.")}}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ callout("10px", true, "Primary", true)}}
+			{{ button("primary", "Call to action", "https://www.lincolnshire.gov.uk") }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ callout("10px", true, "Secondary", true)}}
+			{{ button("secondary", "Call to action", "https://www.lincolnshire.gov.uk") }}
+			{{ divider() }}
+		</mj-column>
+	</mj-section>
+	<mj-section full-width="true" css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("h2", "Captioned Links")}}
+			{{ paragraph("30px", false, "Always have a link on a seperate line where possible. It makes it clear for users to find the next step, and by having the link captioned, gives context to what the link is for.")}}
+			{{ callout("10px", true, "URL", true)}}
+			{{ captionedLink("Intro text before a link:", false, "https://www.lincolnshire.gov.uk", "https://www.lincolnshire.gov.uk")}}
+			{{ callout("10px", true, "Telephone Number", true)}}
+			{{ captionedLink("Intro text before a telphone number:", true, "01234 567 890", "01234 567 890")}}
+			{{ divider() }}
+		</mj-column>
+	</mj-section>
+	<mj-section css-class="pd-20-dt" padding="0 0 30px">
+		<mj-column padding="0">
+			{{ heading("h2", "Tables")}}
+			{{ paragraph("30px", false, "You can use tables for displaying tabular data that can't be simplified in another way. This might be the case if there is a collection of data that is repeated.")}}
+			{{ callout("10px", true, "Text-based table", true)}}
+			{{ paragraph("10px", false, "If the table has textual content the data is left aligned. so that it is easier to read, as this follows the natural flow in the english language.")}}
+			{{ lccTable({
+					caption: "Dates and amounts",
+					firstCellIsHeader: true,
+					head: [
+						{
+							text: "Date"
+						},
+						{
+							text: "Amount"
+						}
+					],
+					rows: [
+						[
+							{
+								text: "First 6 weeks"
+							},
+							{
+								text: "£109.80 per week"
+							}
+						],
+						[
+							{
+								text: "Next 33 weeks"
+							},
+							{
+								text: "£109.80 per week"
+							}
+						],
+						[
+							{
+								text: "Total estimated pay"
+							},
+							{
+								text: "£4,282.20"
+							}
+						]
+					]
+				}) }}
+			{{ callout("10px", true, "Number-based table", true)}}
+			{{ paragraph("10px", false, "If the table has numerical content the data is right aligned, this is so that figures, are always aligned regardless of the number of digits; i.e £1.00 will line up with £10.00")}}
+			{{ lccTable({
+					caption: "Dates and amounts",
+					firstCellIsHeader: true,
+					head: [
+							{
+								text: "Month you apply"
+							},
+							{
+								text: "Rate for bicycles",
+								format: "numeric"
+							},
+							{
+								text: "Rate for vehicles",
+								format: "numeric"
+							}
+						],
+					rows: [
+						[
+							{
+								text: "January"
+							},
+							{
+								text: "£85",
+								format: "numeric"
+							},
+							{
+								text: "£95",
+								format: "numeric"
+							}
+						],
+						[
+							{
+								text: "February"
+							},
+							{
+								text: "£75",
+								format: "numeric"
+							},
+							{
+								text: "£55",
+								format: "numeric"
+							}
+						],
+						[
+							{
+								text: "March"
+							},
+							{
+								text: "£165",
+								format: "numeric"
+							},
+							{
+								text: "£125",
+								format: "numeric"
+							}
+						]
+					]
+				}) }}
+		</mj-column>
+	</mj-section>
+
+{% endblock %}

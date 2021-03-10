@@ -1,0 +1,5 @@
+{% macro link(paddingBottom="10px", telephone="false", linkURL="URL", linkText="URL") %}
+<mj-text padding="0 0 {{paddingBottom}}" font-size="36px" line-height="40px">
+  <a href="{% if telephone %}tel:{% endif %}{{linkURL}}" class="lcc-link">{{linkText | safe}}</a>
+</mj-text>
+{% endmacro %}

@@ -228,6 +228,5 @@
 		<!-- Header -->
 		{% include "global/basic-header.mjml" %}
 		{% block content %}{% endblock %}
-		{% include "global/basic-footer.mjml" %}
 	</mj-body>
 </mjml>

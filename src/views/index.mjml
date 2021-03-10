@@ -1,16 +1,17 @@
-{% extends "default.mjml" %}
+{% extends "without-footer.mjml" %}
 
-{% from "typography/captioned-link.mjml" import captionedLink %}
+<!-- {% from "typography/captioned-link.mjml" import captionedLink %}
 {% from "typography/heading.mjml" import heading %}
 {% from "typography/paragraph.mjml" import paragraph %}
 {% from "divider/divider.mjml" import divider %}
+{% from "typography/link.mjml" import link %} -->
 
 {% block title %} {{ index_title }} {% endblock %}
 {% block preheader %} {{ index_description }} {% endblock %}
 
 {% block content %}
 
-	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+	<mj-section css-class="pd-20-dt" padding="40px 10px 0">
 		<mj-column padding="0">
 			{{ heading("h1", "LCC Email Kit")}}
 			{{ paragraph(
@@ -27,42 +28,16 @@
 					"You can follow tutorials, view examples and templates."
 				)
 			}}
-			{{}}
+			{{ link("0", false, "/docs/tutorials/tutorials-and-examples.html", "View tutorials and examples") }}
+			{{ divider() }}
+			{{ heading("h2", "Components")}}
+			{{ paragraph(
+					"20px",
+					false,
+					"View all of the components available in this Kit"
+				)
+			}}
+			{{ link("0", false, "/components", "View all components") }}
 		</mj-column>
 	</mj-section>
-
-	<mj-section background-color="#fafafa" padding-top="90px" padding-bottom="90px">
-		<mj-column>
-
-			<mj-image
-				href="examples/basic.html"
-				src="https://cloud.githubusercontent.com/assets/6558790/12779864/d9c20556-ca6a-11e5-9007-d40ac89c5088.png" />
-			<mj-text align="center">Basic template</mj-text>
-
-		</mj-column>
-		<mj-column>
-
-			<mj-image
-				href="examples/newsletter.html"
-				src="https://cloud.githubusercontent.com/assets/6558790/12789753/6fd35f3e-ca9f-11e5-8ff0-a1e090a9bede.png" />
-			<mj-text align="center" padding-top="30px">Newsletter template</mj-text>
-
-		</mj-column>
-	</mj-section>
-
-	<mj-section background-color="#f0f0f0">
-		<mj-column>
-
-			<mj-social mode="vertical">
-				<mj-social-element name="twitter" href="https://mjml.io/">
-					Twitter
-				</mj-social-element>
-				<mj-social-element name="facebook" href="https://mjml.io/">
-					Facebook
-				</mj-social-element>
-			</mj-social>
-
-		</mj-column>
-	</mj-section>
-
 {% endblock %}

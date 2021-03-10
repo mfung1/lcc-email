@@ -7,7 +7,7 @@
 
 {% block content %}
   <!-- Intro text -->
-	<mj-section full-width="true" css-class="pd-20-dt" padding="40px 10px 0">
+	<mj-section css-class="pd-20-dt" padding="40px 10px 0">
 		<mj-column padding="0">
 			{{ heading("30px", "h1", templates.click_tip.mainHeading)}}
 			{{ paragraph("20px", true, templates.click_tip.greeting)}}

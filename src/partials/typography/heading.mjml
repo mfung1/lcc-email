@@ -1,5 +1,4 @@
-{% macro heading(paddingBottom="", level="", text="", color="", textAlign="") %}
-{% macro heading(level="", text="", color="") %}
+{% macro heading(level="", text="", color="", textAlign="") %}
 <mj-text
   padding="0 0 {%
     if level == "h1"
