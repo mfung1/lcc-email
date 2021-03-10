@@ -38,7 +38,7 @@ export const customPlumber = (errTitle) => {
 }
 
 export const clean = () => {
-  return del(['./dist/code/**/**']);
+  return del(['./dist/code/mjml', './dist/code/html/examples'])
 }
 
 function load_data() {

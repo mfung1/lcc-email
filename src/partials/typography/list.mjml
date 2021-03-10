@@ -1,16 +1,23 @@
-{% macro list(type="", listItems) %}
-  {% set listType = "ul" %}
-  {% if type == "ordered" %}
+{% macro list(params) %}
+  {% if params.type == "ordered" %}
     {% set listType = "ol" %}
+  {% else %}
+    {% set listType = "ul" %}
   {% endif %}
   <mj-text
   padding="0 0 30px"
   font-size="16px"
   line-height="20px">
     <{{listType}} class="lcc-list">
-      {% for listItem in listItems %}
-        <li class="lcc-list_item"><span>{{listItem}}</span></li>
-      {% endfor %}
+      {% if params.listItemType=="text" %}
+        {% for listItem in params.listItems %}
+          <li class="lcc-list_item"><span>{{listItem.text}}</span></li>
+        {% endfor %}
+      {% elseif params.listItemType=="links" %}
+        {% for listItem in params.listItems %}
+          <li class="lcc-list_item"><a href="{{listItem.link}}" class="lcc-link"><span>{{listItem.text}}</span></a></li>
+        {% endfor %}
+      {% endif %}
     </{{listType}}>
   </mj-text>
 {% endmacro %}

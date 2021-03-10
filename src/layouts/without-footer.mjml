@@ -116,10 +116,16 @@
 				font-family: Roboto, Helvetica, Arial, sans-serif;
 			}
 			.lcc-list_item {
-				padding: 0 0 20px;
+				padding: 0 0 5px;
+			}
+			.lcc-list_item:last-child {
+				padding: 0;
 			}
 			.lcc-list_item span {
 				color: #424141;
+			}
+			.lcc-list_item a span {
+				color: inherit;
 			}
 			.lcc-link {
 				display: block;
@@ -127,6 +133,9 @@
 				text-decoration: underline;
 				text-decoration-skip-ink: all;
 				font-weight: 500;
+			}
+			.lcc-link--inline {
+				display: inline-block;
 			}
 			.lcc-link:hover {
 				text-decoration: none;

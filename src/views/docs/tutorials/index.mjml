@@ -1,0 +1,48 @@
+{% extends "without-footer.mjml" %}
+
+{% block title %}Tutorials and Examples{% endblock %}
+
+{% block containerbackground %}background-color="#ffffff"{% endblock %}
+
+{% block content %}
+	<!-- Breadcrumbs -->
+	<mj-section css-class="pd-20-dt" padding="20px 10px 0" text-align="left">
+		<mj-column padding="0" width="80px" vertical-align="middle">
+			{{ link("0", false, "/", "Email Kit") }}
+		</mj-column>
+		<mj-column padding="0 10px 0 0" width="7px" vertical-align="middle">
+			<mj-text padding="0">
+				<span style="display: block;border: solid;border-width: 1px 1px 0 0;border-color: #424141;width: 7px;height: 7px;transform:rotate(45deg)"></span>
+			</mj-text>
+		</mj-column>
+		<mj-column padding="0 0 0 10px" width="250px" vertical-align="middle">
+			{{ link("0", false, "/docs/tutorials", "Tutorials and Examples") }}
+		</mj-column>
+	</mj-section>
+	<!-- /Breadcrumbs -->
+  <!-- Intro text -->
+	<mj-section css-class="pd-20-dt" padding="40px 10px 0">
+		<mj-column padding="0">
+			{{ heading("h1", "Tutorials and Examples")}}
+			{{ paragraph("0", false, "Listed below, you'll find several tutorials on how to achieve certain things and template examples so you have something to refer to.") }}
+			{{ divider() }}
+			{{ callout("5px", true, "Tutorials", true)}}
+			{{ heading("h2", "Get Started")}}
+			{{ list({type:"ordered", listItemType:"links", listItems:[
+			{
+				link: "/docs/tutorials/build-a-basic-template",
+				text: "Build a basic template"
+			},
+			{
+				link: "/docs/tutorials/open-your-template-in-your-editor",
+				text: "Open your prototype in your editor"
+			},
+			{
+				link: "/docs/tutorials/create-a-template",
+				text: "Create a template"
+			}
+			]}) }}
+
+		</mj-column>
+	</mj-section>
+{% endblock %}
